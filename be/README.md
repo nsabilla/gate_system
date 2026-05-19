@@ -16,28 +16,6 @@ Backend API untuk RFQ Management System.
 - MySQL aktif
 - Database sudah dibuat (contoh: `project_rfq`)
 
-## Konfigurasi `.env`
-
-Buat file `.env` di folder `rfq-backend`:
-
-```env
-db_name=project_rfq
-db_user=root
-db_pass=your_password
-db_type=mysql
-db_host=localhost
-db_port=3306
-charset=utf8mb4
-parse_time=True
-
-web_port=8085
-prefix=/api/v1
-
-JWT_SECRET=your_secret_key
-ACCESS_TOKEN_EXPIRE=15
-REFRESH_TOKEN_EXPIRE=72
-```
-
 Catatan:
 - `WEB_PORT`/`PREFIX` (uppercase) juga didukung.
 - Pastikan frontend mengarah ke `http://localhost:8085/api/v1`.
