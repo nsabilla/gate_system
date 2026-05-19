@@ -1,0 +1,283 @@
+@baseUrl = http://localhost:8085/api/v1
+
+### =====================================================
+### DUMMY USERS: 5 DATA PER ROLE
+### Roles: marketing, engineering, accounting, purchasing
+### Password default: 12345678
+### =====================================================
+
+### MARKETING 1
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "MKT0001",
+  "name": "Marketing User 1",
+  "email": "mkt0001@example.com",
+  "role": "marketing",
+  "password": "12345678"
+}
+
+### MARKETING 2
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "MKT0002",
+  "name": "Marketing User 2",
+  "email": "mkt0002@example.com",
+  "role": "marketing",
+  "password": "12345678"
+}
+
+### MARKETING 3
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "MKT0003",
+  "name": "Marketing User 3",
+  "email": "mkt0003@example.com",
+  "role": "marketing",
+  "password": "12345678"
+}
+
+### MARKETING 4
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "MKT0004",
+  "name": "Marketing User 4",
+  "email": "mkt0004@example.com",
+  "role": "marketing",
+  "password": "12345678"
+}
+
+### MARKETING 5
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "MKT0005",
+  "name": "Marketing User 5",
+  "email": "mkt0005@example.com",
+  "role": "marketing",
+  "password": "12345678"
+}
+
+### ENGINEERING 1
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ENG0001",
+  "name": "Engineering User 1",
+  "email": "eng0001@example.com",
+  "role": "engineering",
+  "password": "12345678"
+}
+
+### ENGINEERING 2
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ENG0002",
+  "name": "Engineering User 2",
+  "email": "eng0002@example.com",
+  "role": "engineering",
+  "password": "12345678"
+}
+
+### ENGINEERING 3
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ENG0003",
+  "name": "Engineering User 3",
+  "email": "eng0003@example.com",
+  "role": "engineering",
+  "password": "12345678"
+}
+
+### ENGINEERING 4
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ENG0004",
+  "name": "Engineering User 4",
+  "email": "eng0004@example.com",
+  "role": "engineering",
+  "password": "12345678"
+}
+
+### ENGINEERING 5
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ENG0005",
+  "name": "Engineering User 5",
+  "email": "eng0005@example.com",
+  "role": "engineering",
+  "password": "12345678"
+}
+
+### ACCOUNTING 1
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ACC0001",
+  "name": "Accounting User 1",
+  "email": "acc0001@example.com",
+  "role": "accounting",
+  "password": "12345678"
+}
+
+### ACCOUNTING 2
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ACC0002",
+  "name": "Accounting User 2",
+  "email": "acc0002@example.com",
+  "role": "accounting",
+  "password": "12345678"
+}
+
+### ACCOUNTING 3
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ACC0003",
+  "name": "Accounting User 3",
+  "email": "acc0003@example.com",
+  "role": "accounting",
+  "password": "12345678"
+}
+
+### ACCOUNTING 4
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ACC0004",
+  "name": "Accounting User 4",
+  "email": "acc0004@example.com",
+  "role": "accounting",
+  "password": "12345678"
+}
+
+### ACCOUNTING 5
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "ACC0005",
+  "name": "Accounting User 5",
+  "email": "acc0005@example.com",
+  "role": "accounting",
+  "password": "12345678"
+}
+
+### PURCHASING 1
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "PUR0001",
+  "name": "Purchasing User 1",
+  "email": "pur0001@example.com",
+  "role": "purchasing",
+  "password": "12345678"
+}
+
+### PURCHASING 2
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "PUR0002",
+  "name": "Purchasing User 2",
+  "email": "pur0002@example.com",
+  "role": "purchasing",
+  "password": "12345678"
+}
+
+### PURCHASING 3
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "PUR0003",
+  "name": "Purchasing User 3",
+  "email": "pur0003@example.com",
+  "role": "purchasing",
+  "password": "12345678"
+}
+
+### PURCHASING 4
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "PUR0004",
+  "name": "Purchasing User 4",
+  "email": "pur0004@example.com",
+  "role": "purchasing",
+  "password": "12345678"
+}
+
+### PURCHASING 5
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "userid": "PUR0005",
+  "name": "Purchasing User 5",
+  "email": "pur0005@example.com",
+  "role": "purchasing",
+  "password": "12345678"
+}
+
+### SAMPLE LOGIN MARKETING
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "userid": "MKT0001",
+  "password": "12345678"
+}
+
+### SAMPLE LOGIN ENGINEERING
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "userid": "ENG0001",
+  "password": "12345678"
+}
+
+### SAMPLE LOGIN ACCOUNTING
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "userid": "ACC0001",
+  "password": "12345678"
+}
+
+### SAMPLE LOGIN PURCHASING
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "userid": "PUR0001",
+  "password": "12345678"
+}

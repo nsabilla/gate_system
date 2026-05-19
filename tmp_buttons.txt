@@ -1,0 +1,670 @@
+1528: const handleDeleteOutHouseAttachment = async (fileId: number) => {
+1539: const handleDeleteDrawing = async (fileId: number) => {
+2376: <div className="space-y-5">
+2377: <div className="rounded-xl border border-gray-200 bg-white p-4">
+2378: <div className="grid gap-3 md:grid-cols-[1fr_auto] md:items-end">
+2379: <div className="space-y-1">
+2380: <label className="text-sm font-medium text-gray-700">RFQ List</label>
+2388: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2397: <p className="text-xs text-gray-500">
+2402: <div className="space-y-1">
+2403: <div className="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-1.5 text-xs text-blue-800">
+2404: <span className="font-semibold">User Level</span>
+2407: <div className="overflow-x-auto pb-1">
+2408: <div className="flex min-w-max gap-2">
+2409: <button
+2412: className={`rounded-lg px-3 py-2 text-sm ${activeTab === 'overview' ? 'bg-[#0D79BD] text-white' : 'bg-gray-100 text-gray-700'
+2417: <button
+2420: className={`rounded-lg px-3 py-2 text-sm ${activeTab === 'estimation' ? 'bg-[#0D79BD] text-white' : 'bg-gray-100 text-gray-700'
+2425: <button
+2428: className={`rounded-lg px-3 py-2 text-sm ${activeTab === 'drawing' ? 'bg-[#0D79BD] text-white' : 'bg-gray-100 text-gray-700'
+2433: <button
+2436: className={`rounded-lg px-3 py-2 text-sm ${activeTab === 'timeframe' ? 'bg-[#0D79BD] text-white' : 'bg-gray-100 text-gray-700'
+2443: <p className="text-xs text-gray-500">
+2444: Tab aktif: <span className="font-medium text-gray-700">{TAB_LABELS[activeTab]}</span>
+2451: <div className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700">
+2452: RFQ aktif: <span className="font-semibold text-gray-900">{selectedRFQNo}</span>
+2453: <span className="text-gray-400"> • </span>
+2456: className={`ml-1 inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${isRFQApproved
+2463: <span className="text-gray-400 mx-1"> • </span>
+2466: className={`ml-1 inline-flex rounded-full px-2 py-0.5 text-xs font-medium capitalize ${pfsType === 'jack'
+2479: <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+2485: <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+2491: <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+2497: <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+2503: <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+2508: {error && <div className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{error}</div>}
+2510: <div className="rounded-xl bg-green-50 px-4 py-3 text-sm text-green-700">{message}</div>
+2514: <div className="rounded-xl border border-gray-200 bg-white p-6 text-sm text-gray-600">
+2520: <div className="rounded-xl border border-gray-200 bg-white p-6 text-sm text-gray-500">
+2526: <div className="rounded-xl border border-gray-200 bg-white p-5">
+2527: <div className="mb-4 flex items-center justify-between">
+2529: <h2 className="text-base font-semibold text-gray-800">Overview</h2>
+2530: <p className="mt-1 text-sm text-gray-500">
+2534: <div className={`rounded-full px-3 py-1 text-xs font-medium capitalize ${pfsType === 'jack'
+2544: <fieldset disabled={!canCrudPFS} className="space-y-6">
+2545: <section className="rounded-lg border border-gray-200">
+2546: <div className="rounded-t-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+2549: <div className="grid gap-4 p-4 md:grid-cols-2">
+2550: <label className="space-y-1 text-sm">
+2551: <span className="text-gray-700">Customer</span>
+2555: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2558: <label className="space-y-1 text-sm">
+2559: <span className="text-gray-700">Part Number</span>
+2563: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2566: <label className="space-y-1 text-sm">
+2567: <span className="text-gray-700">Product</span>
+2571: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2574: <label className="space-y-1 text-sm">
+2575: <span className="text-gray-700">Quantity / Month (pcs)</span>
+2579: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2582: <label className="space-y-1 text-sm">
+2583: <span className="text-gray-700">Rejection Rate (%)</span>
+2591: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2594: <label className="space-y-1 text-sm">
+2595: <span className="text-gray-700">Efficiency (%)</span>
+2603: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2606: <label className="space-y-1 text-sm">
+2607: <span className="text-gray-700">Line</span>
+2611: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2617: <section className="rounded-lg border border-gray-200">
+2618: <div className="rounded-t-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+2621: <div className="grid gap-4 p-4 md:grid-cols-2">
+2622: <label className="space-y-1 text-sm">
+2623: <span className="text-gray-700">Customer</span>
+2627: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2630: <label className="space-y-1 text-sm">
+2631: <span className="text-gray-700">Part Number</span>
+2635: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2638: <label className="space-y-1 text-sm">
+2639: <span className="text-gray-700">Product</span>
+2643: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2646: <label className="space-y-1 text-sm">
+2647: <span className="text-gray-700">Quantity / Month</span>
+2651: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2654: <label className="space-y-1 text-sm">
+2655: <span className="text-gray-700">Rejection Rate (%)</span>
+2663: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2666: <label className="space-y-1 text-sm">
+2667: <span className="text-gray-700">Efficiency (%)</span>
+2675: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2678: <label className="space-y-1 text-sm">
+2679: <span className="text-gray-700">Line</span>
+2683: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2690: <div className="mt-5 flex justify-end">
+2691: <button
+2695: className="rounded-lg bg-[#0D79BD] px-4 py-2 text-sm text-white disabled:opacity-60"
+2704: <div className="space-y-5">
+2706: <div className="rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-blue-800">
+2712: <div className="rounded-xl border border-purple-200 bg-purple-50 px-4 py-3 text-sm text-purple-800">
+2718: <div className="rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-sm text-orange-800">
+2723: <fieldset disabled={!canCrudPFS} className="space-y-5">
+2725: <div className="rounded-xl border border-gray-200 bg-white p-5">
+2726: <div className="mb-4 flex items-center justify-between">
+2728: <h2 className="text-base font-semibold text-gray-800">
+2731: <p className="mt-1 text-sm text-gray-500">
+2738: <div className={`rounded-full px-3 py-1 text-xs font-medium capitalize ${pfsType === 'jack'
+2745: <div className="grid gap-4 md:grid-cols-3">
+2746: <label className="space-y-1 text-sm">
+2747: <span className="text-gray-700">Product Weight</span>
+2763: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2766: <label className="space-y-1 text-sm">
+2767: <span className="text-gray-700">RM Weight</span>
+2773: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+2776: <label className="space-y-1 text-sm">
+2777: <span className="text-gray-700">Material Grade</span>
+2783: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2786: <label className="space-y-1 text-sm">
+2787: <span className="text-gray-700">Dia</span>
+2795: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2798: <label className="space-y-1 text-sm">
+2799: <span className="text-gray-700">Length (mm)</span>
+2810: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2813: <label className="space-y-1 text-sm">
+2814: <span className="text-gray-700">Yield (%)</span>
+2830: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2833: <label className="space-y-1 text-sm">
+2834: <span className="text-gray-700">Cut Qty</span>
+2848: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2851: <label className="space-y-1 text-sm">
+2852: <span className="text-gray-700">RM + Rem</span>
+2863: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2867: <label className="mt-4 block space-y-1 text-sm">
+2868: <span className="text-gray-700">Remark</span>
+2873: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+2881: <div className="rounded-xl border border-gray-200 bg-white p-5">
+2882: <div className="mb-3 flex items-center justify-between">
+2883: <h2 className="text-base font-semibold text-gray-800">Process & Equipment</h2>
+2884: <button
+2887: className="rounded-lg bg-gray-100 px-3 py-1.5 text-sm text-gray-700"
+2889: Add Row
+2892: <div className="space-y-3">
+2894: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+2895: Belum ada data Process & Equipment. Klik <b>Add Row</b> untuk menambah.
+2899: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+2900: <div className="mb-2 text-xs font-semibold text-gray-500">Process #{idx + 1}</div>
+2901: <div className="grid gap-2 md:grid-cols-5">
+2906: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2914: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2920: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2926: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2935: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2944: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2953: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2962: className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
+2964: <div className="flex gap-2">
+2969: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+2971: <button
+2974: className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"
+2985: <div className="rounded-xl border border-gray-200 bg-white p-5">
+2986: <div className="mb-3 flex items-center justify-between">
+2987: <h2 className="text-base font-semibold text-gray-800">Purchase Equipment Plan</h2>
+2988: <button
+2991: className="rounded-lg bg-gray-100 px-3 py-1.5 text-sm text-gray-700"
+2993: Add Row
+2996: <p className="mb-4 text-sm text-gray-500">
+2999: <div className="space-y-3">
+3001: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3002: Belum ada data process plan. Klik <b>Add Row</b> untuk menambah.
+3006: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3007: <div className="mb-2 text-xs font-semibold text-gray-500">Item #{idx + 1}</div>
+3008: <div className="grid gap-2 md:grid-cols-5">
+3013: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3019: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3029: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3035: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3037: <div className="flex gap-2">
+3042: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3044: <button
+3049: className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"
+3060: <div className="rounded-xl border border-gray-200 bg-white p-5">
+3061: <div className="mb-3 flex items-center justify-between">
+3062: <h2 className="text-base font-semibold text-gray-800">Investment</h2>
+3063: <button
+3066: className="rounded-lg bg-gray-100 px-3 py-1.5 text-sm text-gray-700"
+3068: Add Row
+3071: <p className="mb-4 text-sm text-gray-500">
+3074: <div className="space-y-3">
+3076: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3077: Belum ada data investment. Klik <b>Add Row</b> untuk menambah.
+3081: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3082: <div className="mb-2 text-xs font-semibold text-gray-500">Investment #{idx + 1}</div>
+3083: <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+3093: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3102: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3109: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3116: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3126: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3135: className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
+3142: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3150: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3158: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3165: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3171: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3173: <button
+3176: className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700"
+3185: <div className="mt-4 grid gap-3 md:grid-cols-3">
+3186: <label className="space-y-1 text-sm">
+3187: <span className="text-gray-700">Total Support</span>
+3194: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+3197: <label className="space-y-1 text-sm">
+3198: <span className="text-gray-700">Total Other</span>
+3205: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+3208: <label className="space-y-1 text-sm">
+3209: <span className="text-gray-700">Grand Total</span>
+3216: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 font-semibold"
+3226: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3227: <div className="mb-3 flex items-center justify-between">
+3228: <h2 className="text-base font-semibold text-gray-800">
+3229: <span className="text-blue-600">Jack: </span>Raw Material
+3231: <button
+3234: className="rounded-lg border border-blue-300 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
+3236: Add Row
+3239: <p className="mb-4 text-sm text-gray-500">
+3242: <div className="space-y-3">
+3244: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3245: Belum ada data Raw Material. Klik <b>Add Row</b> untuk menambah.
+3249: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3250: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+3252: <button
+3255: className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+3257: Delete
+3260: <div className="grid gap-2 md:grid-cols-4">
+3265: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3271: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3279: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3287: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3295: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3302: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3309: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3317: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3323: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3332: <div className="mt-4 flex items-center justify-end gap-3 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+3333: <span className="text-sm font-semibold text-gray-700">Total wt/unit (kg)</span>
+3334: <span className="text-sm font-bold text-blue-700">{jackRawMaterialTotal.toLocaleString('id-ID', { minimumFractionDigits: 3 })}</span>
+3339: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3340: <div className="mb-3 flex items-center justify-between">
+3341: <h2 className="text-base font-semibold text-gray-800">
+3342: <span className="text-blue-600">Jack: </span>Component Purchase
+3344: <button
+3347: className="rounded-lg border border-blue-300 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
+3349: Add Row
+3352: <p className="mb-4 text-sm text-gray-500">
+3355: <div className="space-y-3">
+3357: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3358: Belum ada data Component Purchase. Klik <b>Add Row</b> untuk menambah.
+3362: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3363: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+3365: <button
+3368: className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+3370: Delete
+3373: <div className="grid gap-2 md:grid-cols-4">
+3378: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3384: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3391: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3397: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3403: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3411: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3419: className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm md:col-span-2"
+3428: <div className="mt-4 flex items-center justify-end gap-3 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+3429: <span className="text-sm font-semibold text-gray-700">Total Price</span>
+3430: <span className="text-sm font-bold text-blue-700">IDR {jackComponentPurchaseTotal.toLocaleString('id-ID')}</span>
+3435: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3436: <div className="mb-3 flex items-center justify-between">
+3437: <h2 className="text-base font-semibold text-gray-800">
+3438: <span className="text-blue-600">Jack: </span>Process Standard
+3440: <button
+3443: className="rounded-lg border border-blue-300 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
+3445: Add Row
+3448: <p className="mb-4 text-sm text-gray-500">
+3451: <div className="space-y-3">
+3453: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3454: Belum ada data Process Standard. Klik <b>Add Row</b> untuk menambah.
+3458: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3459: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+3461: <button
+3464: className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+3466: Delete
+3469: <div className="grid gap-2 md:grid-cols-4">
+3474: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3480: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3487: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3495: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3503: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3504: <div className="mb-3 flex items-center justify-between">
+3505: <h2 className="text-base font-semibold text-gray-800">
+3506: <span className="text-blue-600">Jack: </span>Dies &amp; Jig Investment
+3508: <button
+3511: className="rounded-lg border border-blue-300 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
+3513: Add Row
+3516: <p className="mb-4 text-sm text-gray-500">
+3519: <div className="space-y-3">
+3521: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3522: Belum ada data Dies &amp; Jig. Klik <b>Add Row</b> untuk menambah.
+3526: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3527: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+3529: <button
+3532: className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+3534: Delete
+3537: <div className="grid gap-2 md:grid-cols-4">
+3542: className="rounded-lg border border-gray-300 px-3 py-2 text-sm md:col-span-4"
+3544: <label className="space-y-1">
+3545: <span className="text-xs text-gray-500">Value A</span>
+3552: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3555: <label className="space-y-1">
+3556: <span className="text-xs text-gray-500">Stroke B</span>
+3563: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3566: <label className="space-y-1">
+3567: <span className="text-xs text-gray-500">Consumable</span>
+3572: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3575: <label className="space-y-1">
+3576: <span className="text-xs text-gray-500">Value C</span>
+3583: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3586: <label className="space-y-1">
+3587: <span className="text-xs text-gray-500">Stroke D</span>
+3594: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3597: <label className="space-y-1">
+3598: <span className="text-xs text-gray-500">Formula Type</span>
+3602: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3608: <label className="space-y-1 md:col-span-2">
+3609: <span className="text-xs text-gray-500">Cost/Pcs (Auto)</span>
+3616: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
+3626: <div className="mt-4 flex items-center justify-end gap-3 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+3627: <span className="text-sm font-semibold text-gray-700">Total Cost/pcs</span>
+3628: <span className="text-sm font-bold text-blue-700">IDR {jackDiesJigTotal.toLocaleString('id-ID')}</span>
+3633: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3634: <div className="mb-3 flex items-center justify-between">
+3635: <h2 className="text-base font-semibold text-gray-800">
+3636: <span className="text-blue-600">Jack: </span>Development Cost
+3638: <button
+3641: className="rounded-lg border border-blue-300 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
+3643: Add Row
+3646: <p className="mb-4 text-sm text-gray-500">
+3649: <div className="space-y-3">
+3651: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3652: Belum ada data Development Cost. Klik <b>Add Row</b> untuk menambah.
+3656: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3657: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+3659: <button
+3662: className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+3664: Delete
+3667: <div className="grid gap-2 md:grid-cols-3">
+3668: <label className="space-y-1 text-sm">
+3669: <span className="text-gray-600 text-xs">Cost Name</span>
+3674: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3677: <label className="space-y-1 text-sm">
+3678: <span className="text-gray-600 text-xs">Amount (Rp)</span>
+3685: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3688: <label className="space-y-1 text-sm">
+3689: <span className="text-gray-600 text-xs">Note</span>
+3694: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3704: <div className="mt-4 flex items-center justify-end gap-3 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+3705: <span className="text-sm font-semibold text-gray-700">Total</span>
+3706: <span className="text-sm font-bold text-blue-700">Rp {jackDevelopmentCostTotal.toLocaleString('id-ID')}</span>
+3711: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3712: <div className="mb-3 flex items-center justify-between">
+3713: <h2 className="text-base font-semibold text-gray-800">
+3714: <span className="text-blue-600">Jack: </span>Process Out House
+3717: <p className="mb-4 text-sm text-gray-500">
+3720: <div className="space-y-3">
+3721: <div className="rounded-lg border border-gray-200 p-3">
+3722: <div className="mb-2 text-xs font-semibold text-gray-500">Outsource Cost</div>
+3723: <div className="grid gap-2 md:grid-cols-2">
+3724: <label className="space-y-1 text-sm">
+3725: <span className="text-gray-700">Process Out House Cost (IDR)</span>
+3730: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3733: <label className="space-y-1 text-sm">
+3734: <span className="text-gray-700">Note</span>
+3737: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3745: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3746: <div className="mb-3 flex items-center justify-between">
+3747: <h2 className="text-base font-semibold text-gray-800">
+3748: <span className="text-blue-600">Jack: </span>Out House Purchasing Attachment
+3751: <p className="mb-4 text-sm text-gray-500">
+3755: <div className="rounded-lg border border-gray-200 p-3">
+3756: <div className="grid gap-3 md:grid-cols-[1fr_auto] md:items-center">
+3762: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3765: <button
+3776: className="rounded-lg bg-[#0D79BD] px-4 py-2 text-sm text-white disabled:opacity-60"
+3782: <p className="mt-2 text-xs text-gray-500">
+3785: <p className="mt-1 text-sm text-gray-600">
+3786: File dipilih: <span className="font-medium text-gray-800">{selectedOutHouseFile?.name || '-'}</span>
+3790: <div className="mt-4 space-y-2">
+3791: <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+3795: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3800: <div key={file.id} className="flex items-center justify-between rounded-lg border border-gray-200 px-3 py-2">
+3801: <div className="min-w-0">
+3802: <div className="truncate text-sm font-medium text-gray-800">{file.file_name}</div>
+3803: <div className="text-xs text-gray-500">
+3807: <div className="ml-3 flex shrink-0 items-center gap-2">
+3812: className="rounded px-3 py-1.5 text-xs font-medium text-blue-600 hover:bg-blue-50"
+3817: <button
+3819: onClick={() => handleDeleteOutHouseAttachment(file.id)}
+3821: className="rounded px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 disabled:opacity-50"
+3832: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3833: <div className="mb-3 flex items-center justify-between">
+3834: <h2 className="text-base font-semibold text-gray-800">
+3835: <span className="text-blue-600">Jack: </span>Assembling
+3837: <button
+3840: className="rounded-lg border border-blue-300 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
+3842: Add Row
+3845: <p className="mb-4 text-sm text-gray-500">
+3848: <div className="space-y-3">
+3850: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3851: Belum ada data Assembling. Klik <b>Add Row</b> untuk menambah.
+3855: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3856: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+3858: <button
+3861: className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+3863: Delete
+3866: <div className="grid gap-2 md:grid-cols-3">
+3871: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3877: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3884: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3892: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3900: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3908: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3917: <div className="mt-4 flex items-center justify-end gap-3 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+3918: <span className="text-sm font-semibold text-gray-700">Total Cost</span>
+3919: <span className="text-sm font-bold text-blue-700">IDR {jackAssemblingTotal.toLocaleString('id-ID')}</span>
+3924: <div className="rounded-xl border border-blue-200 bg-white p-5">
+3925: <div className="mb-3 flex items-center justify-between">
+3926: <h2 className="text-base font-semibold text-gray-800">
+3927: <span className="text-blue-600">Jack: </span>Packing &amp; Delivery
+3929: <button
+3932: className="rounded-lg border border-blue-300 bg-blue-50 px-3 py-2 text-sm text-blue-700 hover:bg-blue-100"
+3934: Add Row
+3937: <p className="mb-4 text-sm text-gray-500">
+3940: <div className="space-y-3">
+3942: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3943: Belum ada data Packing &amp; Delivery. Klik <b>Add Row</b> untuk menambah.
+3947: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+3948: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+3950: <button
+3953: className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100"
+3955: Delete
+3958: <div className="grid gap-2 md:grid-cols-4">
+3959: <label className="space-y-1 text-sm">
+3960: <span className="text-gray-600 text-xs">Item</span>
+3965: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3968: <label className="space-y-1 text-sm">
+3969: <span className="text-gray-600 text-xs">Price (IDR)</span>
+3976: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3979: <label className="space-y-1 text-sm">
+3980: <span className="text-gray-600 text-xs">Qty/box</span>
+3987: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+3990: <label className="space-y-1 text-sm">
+3991: <span className="text-gray-600 text-xs">Cost/pcs (IDR)</span>
+3999: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
+4009: <div className="mt-4 flex items-center justify-end gap-3 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+4010: <span className="text-sm font-semibold text-gray-700">Total Cost/pcs</span>
+4011: <span className="text-sm font-bold text-blue-700">IDR {jackPackingDeliveryTotal.toLocaleString('id-ID')}</span>
+4016: <div className="rounded-xl border border-blue-200 bg-white p-5">
+4017: <div className="mb-3 flex items-center justify-between">
+4018: <h2 className="text-base font-semibold text-gray-800">
+4019: <span className="text-blue-600">Jack: </span>Timeframe
+4022: <p className="mb-4 text-sm text-gray-500">
+4025: <div className="space-y-3">
+4027: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+4032: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+4033: <div className="mb-2 text-xs font-semibold text-gray-500">Timeframe #{idx + 1}</div>
+4034: <div className="grid gap-2 md:grid-cols-5">
+4039: className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
+4045: className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
+4050: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+4055: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+4060: className="rounded-lg border border-gray-300 px-3 py-2 text-sm"
+4063: <div className="mt-2">
+4068: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm"
+4076: <div className="rounded-xl border border-blue-200 bg-white p-5">
+4077: <div className="mb-3">
+4078: <h2 className="text-base font-semibold text-gray-800">
+4079: <span className="text-blue-600">Jack: </span>Result
+4082: <p className="mb-4 text-sm text-gray-500">
+4085: <div className="space-y-3">
+4086: <div className="rounded-lg border border-gray-200 p-3">
+4087: <div className="mb-2 text-xs font-semibold text-gray-500">Final Result</div>
+4088: <div className="grid gap-2 md:grid-cols-2">
+4089: <label className="space-y-1 text-sm">
+4090: <span className="text-gray-700">Final Result Status</span>
+4093: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+4100: <label className="space-y-1 text-sm">
+4101: <span className="text-gray-700">Notes</span>
+4104: className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+4112: <div className="rounded-xl border border-blue-100 bg-blue-50 p-4 mt-5">
+4113: <p className="text-sm text-blue-800">
+4121: <div className="space-y-4 rounded-xl border border-purple-200 bg-purple-50 p-5">
+4122: <div className="rounded-lg border border-purple-300 bg-white p-4 text-sm text-purple-800">
+4127: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4128: <div className="mb-3 flex items-center justify-between">
+4129: <h3 className="font-semibold text-purple-900">1. Tech Spec</h3>
+4130: <button type="button" onClick={addToolsetTechSpecRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4132: <div className="space-y-2">
+4134: <div key={idx} className="grid gap-2 md:grid-cols-4">
+4135: <input value={row.part_no} onChange={(e) => updateToolsetTechSpecRow(idx, 'part_no', e.target.value)} placeholder="Part No" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4136: <input value={row.component_name} onChange={(e) => updateToolsetTechSpecRow(idx, 'component_name', e.target.value)} placeholder="Component Name" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4137: <input value={row.qty} onChange={(e) => updateToolsetTechSpecRow(idx, 'qty', e.target.value)} placeholder="Qty" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4138: <input value={row.part_no_mtm} onChange={(e) => updateToolsetTechSpecRow(idx, 'part_no_mtm', e.target.value)} placeholder="Part No MTM" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4139: <input value={row.part_no_supplier} onChange={(e) => updateToolsetTechSpecRow(idx, 'part_no_supplier', e.target.value)} placeholder="Part No Supplier" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4140: <input value={row.actual_cost_idr} onChange={(e) => updateToolsetTechSpecRow(idx, 'actual_cost_idr', e.target.value)} placeholder="Actual Cost IDR" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4141: <input value={row.remark} onChange={(e) => updateToolsetTechSpecRow(idx, 'remark', e.target.value)} placeholder="Remark" className="rounded-lg border border-gray-300 px-3 py-2 text-sm md:col-span-2" />
+4142: <button type="button" onClick={() => deleteToolsetTechSpecRow(idx)} className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">Del</button>
+4148: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4149: <div className="mb-3 flex items-center justify-between">
+4150: <h3 className="font-semibold text-purple-900">1A. Tech Spec Detail</h3>
+4151: <button type="button" onClick={addToolsetTechSpecDetailRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4153: <div className="space-y-4">
+4155: <div key={idx} className="rounded-lg border border-gray-200 p-3">
+4156: <div className="mb-2 flex items-center justify-between text-xs font-semibold text-gray-500">
+4158: <button type="button" onClick={() => deleteToolsetTechSpecDetailRow(idx)} className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100">Delete</button>
+4160: <div className="grid gap-2 md:grid-cols-4">
+4161: <label className="space-y-1"><span className="text-xs text-gray-500">Material</span><input value={row.material} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'material', e.target.value)} placeholder="Material" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4162: <label className="space-y-1"><span className="text-xs text-gray-500">Diameter (mm)</span><input type="number" step="0.01" value={row.diameter_mm} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'diameter_mm', e.target.value)} placeholder="Diameter" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4163: <label className="space-y-1"><span className="text-xs text-gray-500">Length (mm)</span><input type="number" step="0.01" value={row.length_mm} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'length_mm', e.target.value)} placeholder="Length" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4164: <label className="space-y-1"><span className="text-xs text-gray-500">Mass (kg)</span><input value={row.mass_kg} readOnly placeholder="Mass" className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm" title="Auto: (Diameter^2) * Length * 0.0000061625" /></label>
+4166: <label className="space-y-1"><span className="text-xs text-gray-500">Mat. Cost Country 1</span><input value={row.material_cost_country_1} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'material_cost_country_1', e.target.value)} placeholder="Country 1" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4167: <label className="space-y-1"><span className="text-xs text-gray-500">Mat. Cost Rp/Kg 1</span><input type="number" step="0.01" value={row.material_cost_rp_kg_1} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'material_cost_rp_kg_1', e.target.value)} placeholder="Rp/Kg 1" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4168: <label className="space-y-1"><span className="text-xs text-gray-500">Mat. Cost Country 2</span><input value={row.material_cost_country_2} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'material_cost_country_2', e.target.value)} placeholder="Country 2" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4169: <label className="space-y-1"><span className="text-xs text-gray-500">Mat. Cost Rp/Kg 2</span><input type="number" step="0.01" value={row.material_cost_rp_kg_2} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'material_cost_rp_kg_2', e.target.value)} placeholder="Rp/Kg 2" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4171: <label className="space-y-1"><span className="text-xs text-gray-500">Finish Cost Country 1</span><input value={row.cost_finish_country_1} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'cost_finish_country_1', e.target.value)} placeholder="Finish C1" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4172: <label className="space-y-1"><span className="text-xs text-gray-500">Finish Cost Rp/Kg 1</span><input type="number" step="0.01" value={row.cost_finish_rp_kg_1} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'cost_finish_rp_kg_1', e.target.value)} placeholder="Fin Rp/Kg 1" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4173: <label className="space-y-1"><span className="text-xs text-gray-500">Finish Cost Country 2</span><input value={row.cost_finish_country_2} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'cost_finish_country_2', e.target.value)} placeholder="Finish C2" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4174: <label className="space-y-1"><span className="text-xs text-gray-500">Finish Cost Rp/Kg 2</span><input type="number" step="0.01" value={row.cost_finish_rp_kg_2} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'cost_finish_rp_kg_2', e.target.value)} placeholder="Fin Rp/Kg 2" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm" /></label>
+4176: <label className="space-y-1"><span className="text-xs text-gray-500">Mass Product (gr)</span><input type="number" step="0.01" value={row.mass_product_gr} onChange={(e) => updateToolsetTechSpecDetailRow(idx, 'mass_product_gr', e.target.value)} placeholder="Mass gr" className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm md:col-span-4" /></label>
+4183: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4184: <div className="mb-3 flex items-center justify-between">
+4185: <h3 className="font-semibold text-purple-900">2. Process Equipment</h3>
+4186: <button type="button" onClick={addToolsetProcessEquipmentRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4188: <div className="space-y-2">
+4190: <div key={idx} className="grid gap-2 md:grid-cols-3">
+4191: <input value={row.process_name} onChange={(e) => updateToolsetProcessEquipmentRow(idx, 'process_name', e.target.value)} placeholder="Process Name" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4192: <input value={row.cycle_time_sec} onChange={(e) => updateToolsetProcessEquipmentRow(idx, 'cycle_time_sec', e.target.value)} placeholder="Cycle Time Sec" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4193: <input value={row.machine_existing} onChange={(e) => updateToolsetProcessEquipmentRow(idx, 'machine_existing', e.target.value)} placeholder="Machine Existing" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4194: <input value={row.machine_new} onChange={(e) => updateToolsetProcessEquipmentRow(idx, 'machine_new', e.target.value)} placeholder="Machine New" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4195: <input value={row.remark} onChange={(e) => updateToolsetProcessEquipmentRow(idx, 'remark', e.target.value)} placeholder="Remark" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4196: <button type="button" onClick={() => deleteToolsetProcessEquipmentRow(idx)} className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">Del</button>
+4202: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4203: <div className="mb-3 flex items-center justify-between">
+4204: <h3 className="font-semibold text-purple-900">3. Equipment Out House</h3>
+4205: <button type="button" onClick={addToolsetSubcontRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4207: <div className="space-y-2">
+4209: <div key={idx} className="grid gap-2 md:grid-cols-3">
+4210: <input value={row.process_name} onChange={(e) => updateToolsetSubcontRow(idx, 'process_name', e.target.value)} placeholder="Process Name" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4211: <input value={row.cost_idr} onChange={(e) => updateToolsetSubcontRow(idx, 'cost_idr', e.target.value)} placeholder="Cost IDR" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4212: <input value={row.cycle_time_sec} onChange={(e) => updateToolsetSubcontRow(idx, 'cycle_time_sec', e.target.value)} placeholder="Cycle Time Sec" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4213: <input value={row.machine_existing} onChange={(e) => updateToolsetSubcontRow(idx, 'machine_existing', e.target.value)} placeholder="Machine Existing" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4214: <input value={row.machine_new} onChange={(e) => updateToolsetSubcontRow(idx, 'machine_new', e.target.value)} placeholder="Machine New" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4215: <input value={row.remark} onChange={(e) => updateToolsetSubcontRow(idx, 'remark', e.target.value)} placeholder="Remark" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4216: <button type="button" onClick={() => deleteToolsetSubcontRow(idx)} className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600 md:col-span-3">Del</button>
+4222: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4223: <div className="mb-3 flex items-center justify-between">
+4224: <h3 className="font-semibold text-purple-900">4. Equipment Plan (K1-K9)</h3>
+4225: <button type="button" onClick={addToolsetEquipmentPlanRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4227: <div className="space-y-2">
+4229: <div key={idx} className="grid gap-2 md:grid-cols-6">
+4230: <input value={row.item_name} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'item_name', e.target.value)} placeholder="Item Name" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4231: <input value={row.specification} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'specification', e.target.value)} placeholder="Specification" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4232: <input value={row.month_k1} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k1', e.target.value)} placeholder="K1" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4233: <input value={row.month_k2} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k2', e.target.value)} placeholder="K2" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4234: <input value={row.month_k3} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k3', e.target.value)} placeholder="K3" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4235: <input value={row.month_k4} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k4', e.target.value)} placeholder="K4" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4236: <input value={row.month_k5} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k5', e.target.value)} placeholder="K5" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4237: <input value={row.month_k6} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k6', e.target.value)} placeholder="K6" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4238: <input value={row.month_k7} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k7', e.target.value)} placeholder="K7" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4239: <input value={row.month_k8} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k8', e.target.value)} placeholder="K8" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4240: <input value={row.month_k9} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'month_k9', e.target.value)} placeholder="K9" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4241: <input value={row.remark} onChange={(e) => updateToolsetEquipmentPlanRow(idx, 'remark', e.target.value)} placeholder="Remark" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4242: <button type="button" onClick={() => deleteToolsetEquipmentPlanRow(idx)} className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600 md:col-span-6">Del</button>
+4248: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4249: <div className="mb-3 flex items-center justify-between">
+4250: <h3 className="font-semibold text-purple-900">5. Tooling Breakdown</h3>
+4251: <button type="button" onClick={addToolsetToolingRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4253: <div className="space-y-2">
+4255: <div key={idx} className="grid gap-2 md:grid-cols-4">
+4256: <input value={row.tooling_category} onChange={(e) => updateToolsetToolingRow(idx, 'tooling_category', e.target.value)} placeholder="Tooling Category" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4257: <input value={row.cost_idr} onChange={(e) => updateToolsetToolingRow(idx, 'cost_idr', e.target.value)} placeholder="Cost IDR" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4258: <input value={row.opm_total_dep} onChange={(e) => updateToolsetToolingRow(idx, 'opm_total_dep', e.target.value)} placeholder="OPM Total Dep" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4259: <input value={row.remark} onChange={(e) => updateToolsetToolingRow(idx, 'remark', e.target.value)} placeholder="Remark" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4260: <button type="button" onClick={() => deleteToolsetToolingRow(idx)} className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600 md:col-span-4">Del</button>
+4266: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4267: <div className="mb-3 flex items-center justify-between">
+4268: <h3 className="font-semibold text-purple-900">6. Packaging</h3>
+4269: <button type="button" onClick={addToolsetPackagingRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4271: <div className="space-y-2">
+4273: <div key={idx} className="grid gap-2 md:grid-cols-5">
+4274: <input value={row.item_name} onChange={(e) => updateToolsetPackagingRow(idx, 'item_name', e.target.value)} placeholder="Item Name" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4275: <input value={row.price_idr} onChange={(e) => updateToolsetPackagingRow(idx, 'price_idr', e.target.value)} placeholder="Price IDR" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4276: <input value={row.qty_per_box} onChange={(e) => updateToolsetPackagingRow(idx, 'qty_per_box', e.target.value)} placeholder="Qty/Box" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4277: <input value={row.cost_per_box_idr} onChange={(e) => updateToolsetPackagingRow(idx, 'cost_per_box_idr', e.target.value)} placeholder="Cost/Box IDR" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4278: <input value={row.remark} onChange={(e) => updateToolsetPackagingRow(idx, 'remark', e.target.value)} placeholder="Remark" className="rounded-lg border border-gray-300 px-3 py-2 text-sm" />
+4279: <button type="button" onClick={() => deleteToolsetPackagingRow(idx)} className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600 md:col-span-5">Del</button>
+4285: <div className="rounded-lg border border-purple-300 bg-white p-4">
+4286: <h3 className="mb-3 font-semibold text-purple-900">7. Summary</h3>
+4287: <p className="mb-2 text-xs text-gray-500">Auto-calculated dari Tooling Breakdown, Packaging, dan Equipment Out House.</p>
+4288: <div className="grid gap-2 md:grid-cols-4">
+4289: <input value={autoToolsetSummary.total_tooling_cost} readOnly placeholder="Total Tooling Cost" className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm" />
+4290: <input value={autoToolsetSummary.total_packaging_cost} readOnly placeholder="Total Packaging Cost" className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm" />
+4291: <input value={autoToolsetSummary.total_equipment_investment} readOnly placeholder="Total Equipment Investment" className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm" />
+4292: <input value={autoToolsetSummary.grand_total} readOnly placeholder="Grand Total" className="rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 text-sm" />
+4299: <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
+4300: <p className="text-sm text-amber-800">
+4307: <div className="flex justify-end">
+4308: <button
+4312: className="rounded-lg bg-[#0D79BD] px-4 py-2 text-sm text-white disabled:opacity-60"
+4321: <div className="space-y-5">
+4322: <div className="rounded-xl border border-gray-200 bg-white p-6">
+4323: <h2 className="mb-4 text-base font-semibold text-gray-800">Drawing Document</h2>
+4326: <div className="relative flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-gray-300 bg-gray-50/50 p-10 mt-2 group hover:border-[#0D79BD]/50 transition-colors">
+4332: className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
+4334: <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-200/60 mb-4 group-hover:bg-blue-50 transition-colors">
+4335: <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600 group-hover:text-[#0D79BD] transition-colors">
+4341: <h3 className="mb-2 text-xl font-semibold text-[#1e293b]">Click to Choose Files</h3>
+4342: <p className="mb-6 text-sm text-gray-500 max-w-sm text-center">
+4345: <span className="text-sm font-medium text-blue-600 underline cursor-pointer">
+4350: <div className="mt-4 flex items-center justify-between gap-3">
+4351: <p className="text-sm text-gray-600">
+4352: File dipilih: <span className="font-medium text-gray-800">{selectedDrawingFile?.name || '-'}</span>
+4354: <button
+4365: className="rounded-lg bg-[#0D79BD] px-4 py-2 text-sm text-white disabled:opacity-60"
+4373: <div className="mt-6 space-y-3">
+4374: <h3 className="text-sm font-semibold text-gray-800">Uploaded Drawings ({drawings.length})</h3>
+4376: <div key={d.id} className="flex items-center justify-between rounded-lg border border-gray-200 p-3">
+4377: <div className="flex items-center gap-3 min-w-0">
+4378: <div className="flex shrink-0 items-center justify-center rounded-lg bg-blue-50 p-2 text-blue-600">
+4384: <div className="min-w-0">
+4385: <div className="text-sm font-medium text-gray-800 truncate">{d.file_name}</div>
+4386: <div className="text-xs text-gray-500">
+4391: <div className="flex shrink-0 items-center gap-2">
+4396: className="rounded px-3 py-1.5 text-xs font-medium text-blue-600 hover:bg-blue-50"
+4401: <button
+4403: onClick={() => handleDeleteDrawing(d.id)}
+4405: className="rounded px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 disabled:opacity-50"
+4420: <div className="space-y-5">
+4422: <div className="rounded-xl border border-gray-200 bg-white p-5">
+4423: <h2 className="mb-4 text-base font-semibold text-gray-800">Activity</h2>
+4424: <p className="mb-4 text-sm text-gray-500">
+4427: <div className="grid gap-4 md:grid-cols-4">
+4428: <label className="space-y-1 text-sm">
+4429: <span className="text-gray-700">Status Activity</span>
+4433: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+4443: <label className="space-y-1 text-sm">
+4444: <span className="text-gray-700">PIC</span>
+4448: className="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2"
+4451: <label className="space-y-1 text-sm">
+4452: <span className="text-gray-700">Target Tanggal</span>
+4457: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+4460: <label className="space-y-1 text-sm">
+4461: <span className="text-gray-700">Remark</span>
+4465: className="w-full rounded-lg border border-gray-300 px-3 py-2"
+4470: <div className="mt-5 flex justify-end">
+4471: <button
+4475: className="rounded-lg bg-[#0D79BD] px-4 py-2 text-sm text-white disabled:opacity-60"
+4483: <div className="rounded-xl border border-gray-200 bg-white p-5">
+4484: <h3 className="mb-3 text-sm font-semibold text-gray-800">Timeline</h3>
+4485: <div className="space-y-2">
+4487: <div className="text-sm text-gray-500">Belum ada data timeline.</div>
+4492: className="rounded-lg border border-gray-200 px-3 py-2 text-sm"
+4494: <div className="font-medium text-gray-800">{row.activity_name || '-'}</div>
+4495: <div className="text-gray-600">{row.remarks || '-'}</div>
+4496: <div className="text-xs text-gray-500">PIC: {row.created_by || '-'}</div>
+4497: <div className="text-xs text-gray-400">{formatDateTimeInAppTZ(row.created_at)}</div>

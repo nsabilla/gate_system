@@ -1,0 +1,31 @@
+### REGISTER USER
+POST http://localhost:8085/api/v1/register
+Content-Type: application/json
+
+{
+  "userid": "EMP00124",
+  "name": "Najwa",
+  "email": "Najwass@gmail.com",
+  "role": "marketing",
+  "password": "12345678"
+}
+
+### LOGIN
+POST http://localhost:8085/api/v1/login
+Content-Type: application/json
+
+{
+  "userid": "EMP00123",
+  "password": "12345678"
+}
+
+### LIST RFQ (pastikan seed RFQ terlihat)
+GET http://localhost:8085/api/v1/rfqs
+
+### DASHBOARD ACTIVITY BY RFQ ID (ganti {RFQ_ID_HASIL_SEED})
+GET http://localhost:8085/api/v1/rfqs/{RFQ_ID_HASIL_SEED}/dashboard-activity
+
+### TIMELINE BY RFQ ID (opsional)
+GET http://localhost:8085/api/v1/rfqs/{RFQ_ID_HASIL_SEED}/timeline
+
+

@@ -1,0 +1,57 @@
+81: cost_rate: string;
+120: type JackDiesJigRow = {
+353: cost_rate: '',
+392: const emptyJackDiesJigRow = (): JackDiesJigRow => ({
+508: const buildTemplateJackPayload = (params: {
+519: diesJigRows: JackDiesJigRow[];
+655: const buildTemplateToolsetPayload = (params: {
+831: const [jackDiesJigRows, setJackDiesJigRows] = useState<JackDiesJigRow[]>([]);
+1237: const mappedDiesJig = sourceRows.map((row) => ({
+1247: setJackDiesJigRows(
+1248: mappedDiesJig.length > 0
+1249: ? mappedDiesJig
+1271: setJackDiesJigRows([]);
+1392: setJackDiesJigRows([]);
+1606: buildTemplateJackPayload({
+1617: diesJigRows: jackDiesJigRows,
+1629: buildTemplateToolsetPayload({
+1742: buildTemplateJackPayload({
+1753: diesJigRows: jackDiesJigRows,
+1771: buildTemplateToolsetPayload({
+1957: const updateJackComponentPurchaseRow = <K extends keyof JackComponentPurchaseRow>(
+2056: const addJackDiesJigRow = () => {
+2057: setJackDiesJigRows((prev) => [...prev, emptyJackDiesJigRow()]);
+2060: const updateJackDiesJigRow = <K extends keyof JackDiesJigRow>(
+2063: value: JackDiesJigRow[K]
+2065: setJackDiesJigRows((prev) =>
+2085: const deleteJackDiesJigRow = (index: number) => {
+2086: setJackDiesJigRows((prev) => prev.filter((_, i) => i !== index));
+2106: const jackRawMaterialTotal = useMemo(() => {
+2123: const jackDiesJigTotal = useMemo(() => {
+2124: return jackDiesJigRows.reduce((sum, row) => {
+2128: }, [jackDiesJigRows]);
+2679: ℹ️ <b>Jack Template</b> - Sections: Product Compare, Raw Material, Component Purchase, Process Standard, Dies & Jig, Development Cost, Process Out House, Assembling, Packing & Delivery, Timeframe, Result
+2906: placeholder="Dies Price"
+2907: title="Dies Price / PCS"
+3316: <span className="text-sm font-bold text-blue-700">{jackRawMaterialTotal.toLocaleString('id-ID', { minimumFractionDigits: 3 })}</span>
+3358: onChange={(e) => updateJackComponentPurchaseRow(idx, 'part_name', e.target.value)}
+3364: onChange={(e) => updateJackComponentPurchaseRow(idx, 'material', e.target.value)}
+3371: onChange={(e) => updateJackComponentPurchaseRow(idx, 'qty_unit', e.target.value)}
+3377: onChange={(e) => updateJackComponentPurchaseRow(idx, 'remark', e.target.value)}
+3383: onChange={(e) => updateJackComponentPurchaseRow(idx, 'part_no', e.target.value)}
+3391: onChange={(e) => updateJackComponentPurchaseRow(idx, 'price_idr', e.target.value)}
+3480: <span className="text-blue-600">Jack: </span>Dies &amp; Jig Investment
+3484: onClick={addJackDiesJigRow}
+3494: {jackDiesJigRows.length === 0 && (
+3496: Belum ada data Dies &amp; Jig. Klik <b>Add Row</b> untuk menambah.
+3499: {jackDiesJigRows.map((row, idx) => (
+3502: <span>Dies &amp; Jig #{idx + 1}</span>
+3505: onClick={() => deleteJackDiesJigRow(idx)}
+3514: onChange={(e) => updateJackDiesJigRow(idx, 'part_name', e.target.value)}
+3522: onChange={(e) => updateJackDiesJigRow(idx, 'value_a', e.target.value)}
+3530: onChange={(e) => updateJackDiesJigRow(idx, 'stroke_b', e.target.value)}
+3536: onChange={(e) => updateJackDiesJigRow(idx, 'consumable', e.target.value)}
+3544: onChange={(e) => updateJackDiesJigRow(idx, 'value_c', e.target.value)}
+3552: onChange={(e) => updateJackDiesJigRow(idx, 'stroke_d', e.target.value)}
+3571: {jackDiesJigRows.length > 0 && (
+3574: <span className="text-sm font-bold text-blue-700">IDR {jackDiesJigTotal.toLocaleString('id-ID')}</span>

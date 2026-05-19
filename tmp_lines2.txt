@@ -1,0 +1,58 @@
+120: type JackDiesJigRow = {
+392: const emptyJackDiesJigRow = (): JackDiesJigRow => ({
+519: diesJigRows: JackDiesJigRow[];
+536: diesJigRows,
+585: dies_jig: (diesJigRows.length > 0
+586: ? diesJigRows
+588: .filter((row) => String(row.item_type || '').trim().toLowerCase() === 'die')
+753: equipment_plan: toolsetEquipmentPlanRows.map((row, idx) => ({
+834: const [jackDiesJigRows, setJackDiesJigRows] = useState<JackDiesJigRow[]>([]);
+1016: item_type: item.item_type === 'die' ? 'die' : 'rm',
+1240: // Load dies jig rows
+1241: const sourceRows = Array.isArray(tJack.dies_jig) ? tJack.dies_jig : [];
+1242: const mappedDiesJig = sourceRows.map((row) => ({
+1253: setJackDiesJigRows(
+1254: mappedDiesJig.length > 0
+1255: ? mappedDiesJig
+1257: .filter((row) => String(row.item_type || '').trim().toLowerCase() === 'die')
+1278: setJackDiesJigRows([]);
+1346: const eqPlan = Array.isArray(tToolset.equipment_plan) ? tToolset.equipment_plan : [];
+1399: setJackDiesJigRows([]);
+1624: diesJigRows: jackDiesJigRows,
+1689: item_type: item.item_type === 'die' ? 'die' : 'rm',
+1705: dies_price_pcs: parseNumberOrNull(toInputValue(item.dies_price_pcs)),
+1760: diesJigRows: jackDiesJigRows,
+1866: dies_price_pcs: null,
+2074: const addJackDiesJigRow = () => {
+2075: setJackDiesJigRows((prev) => [...prev, emptyJackDiesJigRow()]);
+2078: const updateJackDiesJigRow = <K extends keyof JackDiesJigRow>(
+2081: value: JackDiesJigRow[K]
+2083: setJackDiesJigRows((prev) =>
+2109: const deleteJackDiesJigRow = (index: number) => {
+2110: setJackDiesJigRows((prev) => prev.filter((_, i) => i !== index));
+2149: const jackDiesJigTotal = useMemo(() => {
+2150: return jackDiesJigRows.reduce((sum, row) => {
+2154: }, [jackDiesJigRows]);
+2705: ℹ️ <b>Jack Template</b> - Sections: Product Compare, Raw Material, Component Purchase, Process Standard, Dies & Jig, Development Cost, Process Out House, Assembling, Packing & Delivery, Timeframe, Result
+2929: value={toInputValue(item.dies_price_pcs)}
+2930: onChange={(e) => updateProcessEquipmentRow(idx, 'dies_price_pcs', parseNumberOrNull(e.target.value))}
+2931: placeholder="Dies Price"
+2932: title="Dies Price / PCS"
+3004: Tambahkan baris jika ada lebih dari satu item material atau die.
+3513: <span className="text-blue-600">Jack: </span>Dies &amp; Jig Investment
+3517: onClick={addJackDiesJigRow}
+3524: Isi field dies, jig, stroke, consumable, dan biaya per pcs sesuai template Jack.
+3527: {jackDiesJigRows.length === 0 && (
+3529: Belum ada data Dies &amp; Jig. Klik <b>Add Row</b> untuk menambah.
+3532: {jackDiesJigRows.map((row, idx) => (
+3535: <span>Dies &amp; Jig #{idx + 1}</span>
+3538: onClick={() => deleteJackDiesJigRow(idx)}
+3547: onChange={(e) => updateJackDiesJigRow(idx, 'part_name', e.target.value)}
+3557: onChange={(e) => updateJackDiesJigRow(idx, 'value_a', e.target.value)}
+3568: onChange={(e) => updateJackDiesJigRow(idx, 'stroke_b', e.target.value)}
+3577: onChange={(e) => updateJackDiesJigRow(idx, 'consumable', e.target.value)}
+3588: onChange={(e) => updateJackDiesJigRow(idx, 'value_c', e.target.value)}
+3599: onChange={(e) => updateJackDiesJigRow(idx, 'stroke_d', e.target.value)}
+3608: onChange={(e) => updateJackDiesJigRow(idx, 'formula_type', e.target.value)}
+3632: {jackDiesJigRows.length > 0 && (
+3635: <span className="text-sm font-bold text-blue-700">IDR {jackDiesJigTotal.toLocaleString('id-ID')}</span>

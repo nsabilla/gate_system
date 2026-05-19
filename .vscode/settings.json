@@ -1,0 +1,38 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "Set-Location": true,
+        "npm -s run build": true,
+        "gofmt": true,
+        "npm run build": true
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "mysqlcon",
+            "username": "root",
+            "database": "rfqdbmtm"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "mysqlcon3",
+            "username": "root",
+            "database": "rfqdbmtm"
+        }
+    ]
+}

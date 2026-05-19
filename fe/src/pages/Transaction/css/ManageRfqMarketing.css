@@ -1,0 +1,39 @@
+textarea {
+  resize: none;
+}
+
+.rfq-modal-overlay {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(13, 121, 189, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 5%, rgba(251, 191, 36, 0.22), transparent 35%),
+    rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.rfq-modal-card,
+.rfq-result-card {
+  animation: rfq-modal-pop 180ms ease-out;
+}
+
+.rfq-modal-header {
+  background: linear-gradient(135deg, rgba(255, 251, 235, 0.92), rgba(255, 255, 255, 1));
+}
+
+@keyframes rfq-modal-pop {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .rfq-modal-card,
+  .rfq-result-card {
+    border-radius: 1rem;
+  }
+}

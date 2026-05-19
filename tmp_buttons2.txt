@@ -1,0 +1,78 @@
+1526: 
+1527: const handleDeleteOutHouseAttachment = async (fileId: number) => {
+1537: 
+1538: const handleDeleteDrawing = async (fileId: number) => {
+2887: >
+2888: Add Row
+2893: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+2894: Belum ada data Process & Equipment. Klik <b>Add Row</b> untuk menambah.
+2991: >
+2992: Add Row
+3000: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3001: Belum ada data process plan. Klik <b>Add Row</b> untuk menambah.
+3066: >
+3067: Add Row
+3075: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3076: Belum ada data investment. Klik <b>Add Row</b> untuk menambah.
+3234: >
+3235: Add Row
+3243: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3244: Belum ada data Raw Material. Klik <b>Add Row</b> untuk menambah.
+3255: >
+3256: Delete
+3347: >
+3348: Add Row
+3356: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3357: Belum ada data Component Purchase. Klik <b>Add Row</b> untuk menambah.
+3368: >
+3369: Delete
+3443: >
+3444: Add Row
+3452: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3453: Belum ada data Process Standard. Klik <b>Add Row</b> untuk menambah.
+3464: >
+3465: Delete
+3511: >
+3512: Add Row
+3520: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3521: Belum ada data Dies &amp; Jig. Klik <b>Add Row</b> untuk menambah.
+3532: >
+3533: Delete
+3641: >
+3642: Add Row
+3650: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3651: Belum ada data Development Cost. Klik <b>Add Row</b> untuk menambah.
+3662: >
+3663: Delete
+3817: type="button"
+3818: onClick={() => handleDeleteOutHouseAttachment(file.id)}
+3840: >
+3841: Add Row
+3849: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3850: Belum ada data Assembling. Klik <b>Add Row</b> untuk menambah.
+3861: >
+3862: Delete
+3932: >
+3933: Add Row
+3941: <div className="rounded-lg border border-dashed border-gray-300 px-4 py-3 text-sm text-gray-500">
+3942: Belum ada data Packing &amp; Delivery. Klik <b>Add Row</b> untuk menambah.
+3953: >
+3954: Delete
+4128: <h3 className="font-semibold text-purple-900">1. Tech Spec</h3>
+4129: <button type="button" onClick={addToolsetTechSpecRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4149: <h3 className="font-semibold text-purple-900">1A. Tech Spec Detail</h3>
+4150: <button type="button" onClick={addToolsetTechSpecDetailRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4156: <span>Detail #{idx + 1}</span>
+4157: <button type="button" onClick={() => deleteToolsetTechSpecDetailRow(idx)} className="rounded-md border border-red-200 bg-red-50 px-2 py-1 text-xs text-red-600 hover:bg-red-100">Delete</button>
+4184: <h3 className="font-semibold text-purple-900">2. Process Equipment</h3>
+4185: <button type="button" onClick={addToolsetProcessEquipmentRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4203: <h3 className="font-semibold text-purple-900">3. Equipment Out House</h3>
+4204: <button type="button" onClick={addToolsetSubcontRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4223: <h3 className="font-semibold text-purple-900">4. Equipment Plan (K1-K9)</h3>
+4224: <button type="button" onClick={addToolsetEquipmentPlanRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4249: <h3 className="font-semibold text-purple-900">5. Tooling Breakdown</h3>
+4250: <button type="button" onClick={addToolsetToolingRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4267: <h3 className="font-semibold text-purple-900">6. Packaging</h3>
+4268: <button type="button" onClick={addToolsetPackagingRow} className="rounded-lg border border-purple-300 bg-purple-50 px-3 py-2 text-sm text-purple-700">Add Row</button>
+4401: type="button"
+4402: onClick={() => handleDeleteDrawing(d.id)}
